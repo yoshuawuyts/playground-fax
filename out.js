@@ -20,7 +20,6 @@ app.use($traceurRuntime.initGeneratorFunction(function $__0(next) {
           break;
         case 4:
           console.log(this);
-          console.log(this.body);
           $ctx.state = -2;
           break;
         default:
@@ -4053,7 +4052,7 @@ var proto = module.exports = {
   }
 };
 delegate(proto, 'request').access('url');
-delegate(proto, 'response');
+delegate(proto, 'response').access('body');
 
 //# sourceMappingURL=<compileOutput>
 
@@ -4129,6 +4128,7 @@ function xhrmw(next) {
   var opts,
       thunk,
       response,
+      res,
       $__1;
   return $traceurRuntime.createGeneratorInstance(function($ctx) {
     while (true)
@@ -4165,7 +4165,15 @@ function xhrmw(next) {
           $ctx.state = 11;
           break;
         case 11:
-          this.response = response;
+          res = response[0];
+          if (res instanceof Error)
+            throw res;
+          this.lastModified = res.headers.lastModified;
+          this.type = res.responseType;
+          this.headers = res.headers;
+          this.status = res.status;
+          this.body = res.body;
+          this.url = res.url;
           $ctx.state = 19;
           break;
         case 19:
@@ -4203,7 +4211,15 @@ module.exports = {
 },{}],15:[function(require,module,exports){
 "use strict";
 "use strict";
-module.exports = {};
+module.exports = {
+  get body() {
+    return this._body;
+  },
+  set body(val) {
+    var original = this._body;
+    this._body = val;
+  }
+};
 
 //# sourceMappingURL=<compileOutput>
 

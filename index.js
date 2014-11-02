@@ -7,9 +7,7 @@ app.use(function *(next) {
   this.method = 'GET';
 
   yield next;
-
-  console.log(this);
-  console.log(this.body)
+  console.log(this)
 });
 
 app.send();
