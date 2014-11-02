@@ -1,3 +1,4 @@
+var polyfills = require('./polyfills');
 var fax = require('fax');
 
 var app = fax();
@@ -7,6 +8,7 @@ app.use(function *(next) {
   this.method = 'GET';
 
   yield next;
+
   console.log(this)
 });
 

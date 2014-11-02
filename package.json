@@ -11,7 +11,12 @@
   "devDependencies": {
     "browserify": "^6.2.0",
     "es6ify": "^1.5.1",
+    "fax": "*",
     "http-server": "^0.7.2",
-    "smokestack": "^2.0.0"
+    "smokestack": "^2.0.0",
+    "viralify": "^0.4.2"
+  },
+  "dependencies": {
+    "setimmediate": "^1.0.2"
   }
 }
