@@ -1,11 +1,15 @@
 var browserify = require('browserify');
 var viralify = require('viralify');
 var es6ify = require('es6ify');
+var koaify = require('koaify');
 var fs = require('fs');
 
-viralify('./node_modules', ['koa-*', 'fax-*'], 'es6ify', function (err) {
+/*
+viralify('./', ['koa-*', 'fax-*'], 'es6ify', function (err) {
   if (err) return console.error(err);
-})
+})*/
+
+koaify();
 
 browserify()
   .add(es6ify.runtime)

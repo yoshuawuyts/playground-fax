@@ -1,3 +1,5 @@
+process.stdout = {};
+
 var polyfills = require('./polyfills');
 var fax = require('fax');
 
@@ -9,7 +11,7 @@ app.use(function *(next) {
 
   yield next;
 
-  console.log(this)
+  console.log(this);
 });
 
 app.send();

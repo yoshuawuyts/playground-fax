@@ -13,10 +13,12 @@
     "es6ify": "^1.5.1",
     "fax": "*",
     "http-server": "^0.7.2",
+    "koa-response-time": "^1.0.2",
     "smokestack": "^2.0.0",
     "viralify": "^0.4.2"
   },
   "dependencies": {
+    "koa-logger": "^1.2.2",
     "setimmediate": "^1.0.2"
   }
 }
